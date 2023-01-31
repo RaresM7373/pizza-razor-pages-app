@@ -1,0 +1,18 @@
+@page
+@model Checkout
+
+<h1>Your order </h1>
+@{
+    var imagePath = "~/images/Pizzas/" + Model.ImageTitle + ".png";
+}
+<div class="align-content-center">
+    <div class="col-3 mx-auto mb-5">
+        <img src="@imagePath" alt="Image not found" class="w-100" asp-append-version="true"/>
+        <p>Your order for @Model.PizzaName is ready!</p>
+        <p>Total price: <strong>@Model.PizzaPrice $</strong></p>
+        <br/>
+        <a class="btn btn-primary mt-3 mx-auto" asp-area="" asp-page="ThankYou">
+            Confirm Order
+        </a>
+    </div>
+</div>
